@@ -6,6 +6,7 @@ import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import {CustomEase} from "gsap/CustomEase";
 import {CustomWiggle} from "gsap/CustomWiggle";
 
+
 //register Plugins
 gsap.registerPlugin(GSDevTools, MorphSVGPlugin, DrawSVGPlugin, CustomWiggle, CustomEase);
 
@@ -36,9 +37,6 @@ ready(() => {
   /* add your code here */
   //Variables
   let mainTL = gsap.timeline({id:"main"});
-  let PERC = {num:0};
-  let PERC_num = document.querySelector ("#percentage_txt tspan");
-
 
   function init(){
     //***********  fadeInTL init ****************
@@ -60,9 +58,10 @@ ready(() => {
   //Nested Timelines
 
     //*********** logoTL ****************
-    function logoTL(){
+  function logoTL(){
       let tl = gsap.timeline();
-      tl.from ("#lexus", {duration:1, alpha:0})
+
+      tl.from ("#lexus", {duration:2, alpha:0})
         .to ("#lexus", {duration:1.5, y:"+=1000"})
     
       ;//tl END
@@ -74,26 +73,27 @@ ready(() => {
   //***********  speedometerTL  ****************
   function speedometerTL(){
     let tl = gsap.timeline();
-    gsap.set ("#speedometer-circle", {drawSVG: "0%"})
-    tl.from ("#speedometer-circle", {duration:1, ease:"power2.out", drawSVG: "0%"})
-    tl.from ("#tick-1" ,{duration:0.1, alpha:0})
-    tl.from ("#tick-2" ,{duration:0.1, alpha:0})
-    tl.from ("#tick-3" ,{duration:0.1, alpha:0})
-    tl.from ("#tick-4" ,{duration:0.1, alpha:0})
-    tl.from ("#tick-5" ,{duration:0.1, alpha:0})
-    tl.from ("#tick-6" ,{duration:0.1, alpha:0})
-    tl.from ("#tick-7" ,{duration:0.1, alpha:0})
-    tl.from ("#tick-8" ,{duration:0.1, alpha:0})
-    tl.from ("#tick-9" ,{duration:0.1, alpha:0})
-    tl.from ("#tick-10" ,{duration:0.1, alpha:0})
-    tl.from ("#tick-11" ,{duration:0.1, alpha:0})
-    tl.from ("#tick-12" ,{duration:0.1, alpha:0})
-    tl.from ("#fuel-gauge", "e", "f" ,{duration:0.5, alpha:0})
-    tl.from ("#fuel-bar", {duration:0.5, scale:0 })
+    gsap.set ("#speedometer-circle", {transformOrigin:"center center"})
 
-    tl.from ("#mph", "#percentage_txt", {alpha:0})
-    tl.to (PERC, {duration:2, number:"+=40", roundProps:"num", onUpdate:percentHandler, ease:"power4.out"}, "mph")
-    
+    tl.from ("#speedometer-circle", {duration:1, ease:"none", drawSVG: 0})
+    .to ("#speedometer-circle", {duration:1, ease:"none" })
+    .from ("#tick-1" ,{duration:0.1, alpha:0})
+    .from ("#tick-2" ,{duration:0.1, alpha:0})
+    .from ("#tick-3" ,{duration:0.1, alpha:0})
+    .from ("#tick-4" ,{duration:0.1, alpha:0})
+    .from ("#tick-5" ,{duration:0.1, alpha:0})
+    .from ("#tick-6" ,{duration:0.1, alpha:0})
+    .from ("#tick-7" ,{duration:0.1, alpha:0})
+    .from ("#tick-8" ,{duration:0.1, alpha:0})
+    .from ("#tick-9" ,{duration:0.1, alpha:0})
+    .from ("#tick-10" ,{duration:0.1, alpha:0})
+    .from ("#tick-11" ,{duration:0.1, alpha:0})
+    .from ("#tick-12" ,{duration:0.1, alpha:0})
+    .from ("#fuel-gauge" ,{duration:0.5, alpha:0})
+    .from ("#E" ,{duration:0.5, alpha:0}, "ef")
+    .from ("#F" ,{duration:0.5, alpha:0}, "ef")
+    .from ("#fuel-bar", {duration:0.5, scale:0 })
+
 
     ;//tl END
 
@@ -101,10 +101,25 @@ ready(() => {
 
   }
 
-  function percentHandler() {
+  var counterSpeed = 100;
 
-    PERC_num.textContent=PERC.num;
-
+  // Set this number you want your counter to count up to. Default is 20
+  var topSpeed = 40;
+  
+  // If yu don't want your speed to start at 0, change it here. Default is 0.
+  var speedNumber = 0;
+  
+  var myVar = setInterval(speedCounter, counterSpeed);
+  
+  function speedCounter() {
+  
+    if (speedNumber < topSpeed) {
+      speedNumber++;
+      document.getElementById("speed-tag").innerHTML = speedNumber;
+    } else {
+      clearInterval(myVar);
+    }
+    return speedNumber;
   }
 
   //*********** mapTL ****************
@@ -130,8 +145,8 @@ ready(() => {
 
   function otherTL(){
     let tl = gsap.timeline();
-    
-    tl.from ("#other", {duration:1, alpha:0})
+
+    tl.from ("#other", {duration:1, alpha:0}, "bottom")
    
     ;//tl END
 
@@ -143,7 +158,7 @@ ready(() => {
   function musicTL(){
     let tl = gsap.timeline();
 
-    tl.from ("#music", {duration:1, alpha:0})
+    tl.from ("#music", {duration:1, alpha:0}, "bottom")
       gsap.set ("#play-button", {display:"none"})
       .to ("#music-time-bar", {duration:3, scaleX:4}, "music")
       .to ("#Lemon-by-Kenshi-Yone", {duration:3, x:"+=15"}, "music")
@@ -185,6 +200,7 @@ gsap.set('#svg-container',{visibility:"visible"});
 //3. BUILD Main timeline
 mainTL.add(logoTL())
       .add(speedometerTL())
+      .add(speedCounter())
       .add(mapTL())
       .add(otherTL())
       .add(musicTL())

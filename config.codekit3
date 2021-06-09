@@ -56,6 +56,14 @@
 		"plM": 52780316221407,
 		"prP": 0
 		},
+	"/dev/content/speed.kit": {
+		"cB": 0,
+		"ft": 2048,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/dev/content/speed.html",
+		"oF": 0
+		},
 	"/dev/content/svg-container.kit": {
 		"cB": 0,
 		"ft": 2048,
@@ -254,6 +262,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dev/scss/sections/_svg-container.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/dev/scss/sections/speed.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dev/scss/sections/speed.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
