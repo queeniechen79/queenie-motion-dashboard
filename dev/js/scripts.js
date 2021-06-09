@@ -123,73 +123,67 @@ ready(() => {
   }
 
   //*********** mapTL ****************
-  function mapTL(){
-    let tl = gsap.timeline();
-      gsap.set ("#map-circle", {drawSVG: "0%"})
-      gsap.set ("#map-lines", {drawSVG: "0%"})
-      tl.from ("#map-circle", {duration:1, ease:"power2.out", drawSVG: "0%"})
-      tl.from ("#map-lines", {duration:1, ease:"power2.out", drawSVG: "0%"})
-        .from ("#navigation-icon", {duration:1, alpha:0})
-        .from ("#p", {duration:0.5, alpha:0, x:"-=50"})
-        .from ("#r", {duration:0.5, alpha:0, x:"-=50"})
-        .from ("#n", {duration:0.5, alpha:0, x:"-=50"})
-        .from ("#d", {duration:0.5, alpha:0, x:"-=50"})
-        .to ("#p", {scale:1.5, duration: 0.5, color: "065EB1"})
-    ;//tl END
+  // function mapTL(){
+  //   let tl = gsap.timeline();
+  //     gsap.set ("#map-circle", {drawSVG: "0%"})
+  //     gsap.set ("#map-lines", {drawSVG: "0%"})
+  //     tl.from ("#map-circle", {duration:1, ease:"power2.out", drawSVG: "0%"})
+  //     tl.from ("#map-lines", {duration:1, ease:"power2.out", drawSVG: "0%"})
+  //       .from ("#navigation-icon", {duration:1, alpha:0})
+  //       .from ("#p", {duration:0.5, alpha:0, x:"-=50"})
+  //       .from ("#r", {duration:0.5, alpha:0, x:"-=50"})
+  //       .from ("#n", {duration:0.5, alpha:0, x:"-=50"})
+  //       .from ("#d", {duration:0.5, alpha:0, x:"-=50"})
+  //       .to ("#p", {scale:1.5, duration: 0.5, color: "065EB1"})
+  //   ;//tl END
 
-    return tl;
+  //   return tl;
 
-  }
+  // }
 
 //*********** otherTL ****************
 
-  function otherTL(){
-    let tl = gsap.timeline();
+  // function otherTL(){
+  //   let tl = gsap.timeline();
 
-    tl.from ("#other", {duration:1, alpha:0}, "bottom")
+  //   tl.from ("#other", {duration:1, alpha:0}, "bottom")
    
-    ;//tl END
+  //   ;//tl END
 
-    return tl;
+  //   return tl;
 
-  }
+  // }
 
   //*********** musicTL ****************
-  function musicTL(){
-    let tl = gsap.timeline();
+  // function musicTL(){
+  //   let tl = gsap.timeline();
 
-    tl.from ("#music", {duration:1, alpha:0}, "bottom")
-      gsap.set ("#play-button", {display:"none"})
-      .to ("#music-time-bar", {duration:3, scaleX:4}, "music")
-      .to ("#Lemon-by-Kenshi-Yone", {duration:3, x:"+=15"}, "music")
+  //   tl.from ("#music", {duration:1, alpha:0}, "bottom")
+  //     gsap.set ("#play-button", {display:"none"})
+  //     .to ("#music-time-bar", {duration:3, scaleX:4}, "music")
+  //     .to ("#Lemon-by-Kenshi-Yone", {duration:3, x:"+=15"}, "music")
    
      
-    ;//tl END
+  //   ;//tl END
 
-    return tl;
+  //   return tl;
 
-  }
+  // }
 
   //*********** phoneTL ****************
-  function phoneTL(){
-    let tl = gsap.timeline();
+  // function phoneTL(){
+  //   let tl = gsap.timeline();
 
-    tl.from ("#phone", {duration:1.5, x:"+=700", ease:"power2.out"})
-      .to ("#phone", {duration:3, x:"+=15", ease:"myWiggle"})
-      .to ("#phone", {duration:1.5, x:"+=700", ease:"power2.out"})
+  //   tl.from ("#phone", {duration:1.5, x:"+=700", ease:"power2.out"})
+  //     .to ("#phone", {duration:3, x:"+=15", ease:"myWiggle"})
+  //     .to ("#phone", {duration:1.5, x:"+=700", ease:"power2.out"})
      
  
-    ;//tl END
+    //; tl END
 
-    return tl;
+  //   return tl;
 
-  }
-
-  //*********** flightTL ****************
-
-
-//*********** moonLandingTL ****************
-
+  // }
 
 //1. set initial properties
 init();
@@ -201,10 +195,10 @@ gsap.set('#svg-container',{visibility:"visible"});
 mainTL.add(logoTL())
       .add(speedometerTL())
       .add(speedCounter())
-      .add(mapTL())
-      .add(otherTL())
-      .add(musicTL())
-      .add(phoneTL())
+      // .add(mapTL())
+      // .add(otherTL())
+      // .add(musicTL())
+      // .add(phoneTL())
 
 
 ;//tl END
