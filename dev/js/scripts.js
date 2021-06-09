@@ -62,7 +62,7 @@ ready(() => {
       let tl = gsap.timeline();
 
       tl.from ("#lexus", {duration:2, alpha:0})
-        .to ("#lexus", {duration:1.5, y:"+=1000"})
+        .to ("#lexus", {duration:1.5, y:"+=800"})
     
       ;//tl END
   

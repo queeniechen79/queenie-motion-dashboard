@@ -1,17 +1,18 @@
 #speed{
     position: absolute;
     // border: 1px solid green;
-    height: 100%;
-    width: 100%;
-    top:0;
-    // left:0;
+    // height: 100%;
+    // width: 100%;
+    top:800;
+    left:300;
     display: flex;
     justify-content: center;
     align-items: center;
     // margin-top: -200px;
 
-    #speed-tag{
-        color: #ffffff;
+    body {
+        font-family: 'Roboto', sans-serif;
+        color:#fff;
     }
 
 }
