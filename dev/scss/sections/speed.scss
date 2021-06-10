@@ -1,16 +1,18 @@
-#speed{
+#speed-counter{
     position: absolute;
     // border: 1px solid green;
-    // height: 100%;
-    // width: 100%;
-    top:800;
-    left:300;
+    height: 30%;
+    width: 40%;
+    top:18vh;
+    left:7.25vw;
     display: flex;
     justify-content: center;
     align-items: center;
     // margin-top: -200px;
 
-    body {
+    #speed-tag, #mph {
+        // height: 30vh;
+        // border: 1px solid blue;
         font-family: 'Roboto', sans-serif;
         color:#fff;
     }

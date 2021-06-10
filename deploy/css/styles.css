@@ -395,13 +395,15 @@ textarea {
     height: 100vh;
     overflow: hidden; }
 
-#speed {
+#speed-counter {
   position: absolute;
-  top: 800;
-  left: 300;
+  height: 30%;
+  width: 40%;
+  top: 18vh;
+  left: 7.25vw;
   display: flex;
   justify-content: center;
   align-items: center; }
-  #speed body {
+  #speed-counter #speed-tag, #speed-counter #mph {
     font-family: 'Roboto', sans-serif;
     color: #fff; }
