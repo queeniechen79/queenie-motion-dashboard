@@ -23,4 +23,8 @@
         height: 100vh;
         overflow: hidden;
     }
+
+    #play-button, #pause-button2, #play-button2 {
+        visibility:hidden;
+    }
 }

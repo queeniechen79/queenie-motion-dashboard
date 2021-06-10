@@ -394,16 +394,5 @@ textarea {
     align-items: center;
     height: 100vh;
     overflow: hidden; }
-
-#speed-counter {
-  position: absolute;
-  height: 30%;
-  width: 40%;
-  top: 18vh;
-  left: 7.25vw;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  #speed-counter #speed-tag, #speed-counter #mph {
-    font-family: 'Roboto', sans-serif;
-    color: #fff; }
+  #svg-container #play-button, #svg-container #pause-button2, #svg-container #play-button2 {
+    visibility: hidden; }
